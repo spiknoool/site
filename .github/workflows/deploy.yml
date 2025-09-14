@@ -6,14 +6,13 @@ on:
       - main
 
 jobs:
-  test:
-    name: deploy2nekoweb
+  deploy:
+    name: Deploy to Nekoweb
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # your build step here, for example Eleventy
       - name: Install dependencies
         run: npm install
 
