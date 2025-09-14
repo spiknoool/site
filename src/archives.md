@@ -1,10 +1,8 @@
 ---
 layout: base.njk
-permalink: archives.html
-title: Archives
-description: These are where old posts go!
-featured_image: favicon.png
+title: "Archives"
 ---
+
 You can also follow this site on [RSS](rss.xml)!
 
 ---
