@@ -1,0 +1,29 @@
+name: Deploy to Nekoweb
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: deploy2nekoweb
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # your build step here, for example Eleventy
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Eleventy
+        run: npm run build
+
+      - name: Deploy to Nekoweb
+        uses: indiefellas/deploy2nekoweb@main
+        with:
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+          nekoweb-domain: minna.nekoweb.org
+          nekoweb-username: minna
+          directory: public
